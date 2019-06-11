@@ -1,6 +1,7 @@
 
-### 3.x (Next)
+### 4.x (Next)
 
+* Updated to work with iOSSnapshotTestCase 5.x [@dbgrandi](https://github.com/dbgrandi)
 
 ### 3.1.1 (02/25/2017)
 

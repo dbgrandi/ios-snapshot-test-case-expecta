@@ -24,6 +24,7 @@
     FBSnapshotTestController *snapshotController = [[FBSnapshotTestController alloc] initWithTestClass:[testCase class]];
     snapshotController.recordMode = record;
     snapshotController.referenceImagesDirectory = referenceDirectory;
+    snapshotController.imageDiffDirectory = NSProcessInfo.processInfo.environment[@"IMAGE_DIFF_DIR"];
     snapshotController.usesDrawViewHierarchyInRect = [Expecta usesDrawViewHierarchyInRect];
     snapshotController.deviceAgnostic = [Expecta isDeviceAgnostic];
   
@@ -34,7 +35,7 @@
     return [snapshotController compareSnapshotOfViewOrLayer:viewOrLayer
                                                    selector:NSSelectorFromString(snapshot)
                                                  identifier:nil
-                                                  tolerance:tolerance
+                                           overallTolerance:tolerance
                                                       error:error];
 }
 
